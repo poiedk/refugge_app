@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=refugee_app
+POSTGRES_USER=PcCvpRrWJmfzadCIpbbPYpWHLYVHVThx
+POSTGRES_PASSWORD=O65IHt78zIJDdNsIBRpWfVR6bE6rosuv5XtaocMyoOgkFipclCiThgy5Y4Q9TtUl
