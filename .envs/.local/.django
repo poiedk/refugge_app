@@ -2,3 +2,9 @@
 # ------------------------------------------------------------------------------
 USE_DOCKER=yes
 IPYTHONDIR=/app/.ipython
+
+# django-allauth
+# ------------------------------------------------------------------------------
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=False
+ACCOUNT_EMAIL_REQUIRED=False
+ACCOUNT_EMAIL_VERIFICATION="none"

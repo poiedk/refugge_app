@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="POST" id="form">
+						{% csrf_token %}
+						<fieldset class="form-group">
+							{{ form|crispy }}
+							{% comment %} {% crispy form %} {% endcomment %}
+							<button type="submit" class="btn btn-success">Αποθήκευση</button>
+						</fieldset>
+					</form>
+{% endblock content %}

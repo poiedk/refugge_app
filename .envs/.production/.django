@@ -4,7 +4,7 @@
 DJANGO_SETTINGS_MODULE=config.settings.production
 DJANGO_SECRET_KEY=PpNPgjrbjGrHUZ10buO8OjJ3HndiRItCdU7ZmI8InQ14aWa69oJaafSHJVdmLOI6
 DJANGO_ADMIN_URL=FkHMpwCjhrvRhZf1JY6Ggg1KvMCsfgZv/
-DJANGO_ALLOWED_HOSTS=.example.com
+DJANGO_ALLOWED_HOSTS=.example.com, localhost
 
 # Security
 # ------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ MAILGUN_DOMAIN=
 
 # django-allauth
 # ------------------------------------------------------------------------------
-DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=False
 
 # Gunicorn
 # ------------------------------------------------------------------------------

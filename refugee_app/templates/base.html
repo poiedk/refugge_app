@@ -49,20 +49,34 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Refugees</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{% url 'refugees:refugee_create' %}">create</a>
+                {% comment %} <a class="dropdown-item" href="#">Another action</a> {% endcomment %}
+                {% comment %} <a class="dropdown-item" href="#">Something else here</a> {% endcomment %}
+              </div>
+            </li>
             {% if request.user.is_authenticated %}
-              <li class="nav-item">
+              {% if request.user.is_superuser %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'admin:index' %}">{% trans "Admin Panel" %}</a>
+                </li>
+              {% endif %}
+              {% comment %} <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-              </li>
+              </li> {% endcomment %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
               </li>
+                              
             {% else %}
-              <li class="nav-item">
+              {% comment %} <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-              </li>
+              </li> {% endcomment %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
@@ -82,10 +96,11 @@
           {% endfor %}
       {% endif %}
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-
+      <div class="container">
+        {% block content %}
+          
+        {% endblock content %}
+      </div>
     </div> <!-- /container -->
 
     {% block modal %}{% endblock modal %}
